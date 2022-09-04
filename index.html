@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="src/styles.css" rel="stylesheet" type="text/css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Neucha&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://kit.fontawesome.com/e2c3656479.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <div class="card-1" style="width: 40rem">
+      <form id="search-form">
+        <input
+          type="text"
+          class="holder"
+          id="city-input"
+          placeholder="City name"
+          autocomplete="off"
+          autofocus="on"
+        />
+        <input type="submit" class="search-button" value="Search" />
+      </form>
+      <div class="card-2" style="height: 20rem">
+        <div class="city">Kyiv</div>
+        <hr class="solid" />
+        <div class="day">Sunday</div>
+        <div class="time">12:00</div>
+        <div class="sky">Cloudy</div>
+        <i class="fa-solid fa-cloud cloud"></i>
+        <div class="temperature">24°C | °F</div>
+
+        <div class="precipitation">Precipitation: 47%</div>
+        <div class="humidity">Humidity: 23%</div>
+        <div class="wind">Wind: 29km/h</div>
+      </div>
+
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <div class="weekday">MON</div>
+            <i class="fa-solid fa-cloud cloud-1"></i>
+            <div class="temp">27°</div>
+          </div>
+          <div class="col">
+            <div class="weekday">TUE</div>
+            <i class="fa-solid fa-cloud-rain cloud-rain"></i>
+            <div class="temp">26°</div>
+          </div>
+          <div class="col">
+            <div class="weekday">WED</div>
+            <i class="fa-solid fa-sun sun"></i>
+            <div class="temp">31°</div>
+          </div>
+          <div class="col">
+            <div class="weekday">THU</div>
+            <i class="fa-solid fa-sun sun"></i>
+            <div class="temp">31°</div>
+          </div>
+          <div class="col">
+            <div class="weekday">FRI</div>
+            <i class="fa-solid fa-cloud cloud-1"></i>
+            <div class="temp">28°</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="src/index.js"></script>
+  </body>
+</html>
