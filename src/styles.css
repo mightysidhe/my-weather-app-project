@@ -78,7 +78,7 @@
   color: #fff;
   position: relative;
   top: -100px;
-  left: 45px;
+  left: 80px;
 }
 
 .cloud {
@@ -117,7 +117,7 @@
 }
 
 .row {
-  padding: 50px 70px;
+  padding: 50px 50px;
 }
 
 .col {
@@ -133,19 +133,19 @@
 .cloud-rain {
   font-size: 40px;
   margin: 10px 10px;
-  color: darkblue;
+  color: #678f97;
 }
 
 .cloud-1 {
   font-size: 40px;
   margin: 10px 10px;
-  color: grey;
+  color: #3a5250;
 }
 
 .sun {
   font-size: 40px;
   margin: 10px 10px;
-  color: orange;
+  color: #f7e261;
 }
 
 .temp {
