@@ -29,15 +29,21 @@ time.innerHTML = `${hours}:${minutes}`;
 
 function showTemperature(response) {
   let temperatureRounded = Math.round(response.data.main.temp);
-  let currentTemperature = document.querySelector(".temperature");
-  currentTemperature.innerHTML = `${temperatureRounded}°C`;
+  let currentTemperature = document.querySelector("#temperature");
+  let descriptionElement = document.querySelector(".sky");
+  let humidityElement = document.querySelector(".humidity-percent");
+  let windElement = document.querySelector(".wind-speed");
+  currentTemperature.innerHTML = `${temperatureRounded}`;
+  descriptionElement.innerHTML = response.data.weather[0].description;
+  humidityElement.innerHTML = response.data.main.humidity;
+  windElement.innerHTML = response.data.wind.speed;
 }
 
 function searchCity(event) {
   event.preventDefault();
   let searchInput = document.querySelector("#city-input");
-  let city = document.querySelector(".city");
-  city.innerHTML = `${searchInput.value}`;
+  let cityElement = document.querySelector(".city");
+  cityElement.innerHTML = `${searchInput.value}`;
   let units = "metric";
   let apiKey = "de2c40e370d58e257faf07ba4ea95840";
   let apiEndPoint = "https://api.openweathermap.org/data/2.5/weather";

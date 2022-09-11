@@ -5,14 +5,14 @@ ul {
 
 .weather-app {
   max-width: 600px;
-  margin: 10px 10px;
+  margin: 20px 10px;
   padding: 20px;
   border: 5px solid #295174;
   border-radius: 1%;
 }
 
 .holder {
-  margin: 20px 10px 20px 75px;
+  margin: 10px 10px 20px 80px;
   width: 300px;
   border: 3px solid #295174;
   border-radius: 50px;
@@ -35,7 +35,7 @@ ul {
   border: 5px solid #295174;
   border-radius: 50px;
   background: #295174;
-  margin: 10px 60px;
+  margin: 10px 60px 20px;
   padding: 0px;
 }
 
@@ -45,6 +45,7 @@ ul {
   color: #fff;
   text-align: center;
   margin: 20px 1px 1px;
+  text-transform: capitalize;
 }
 
 .solid {
@@ -69,11 +70,12 @@ ul {
   font-family: "Neucha";
   font-size: 25px;
   color: #fff;
+  text-transform: capitalize;
 }
 
 .weather-temperature {
-  margin-top: -80px;
-  margin-left: 30px;
+  margin-top: -62px;
+  margin-left: 22px;
 }
 
 .weather-temperature .cloud {
@@ -96,12 +98,6 @@ ul {
   color: #fff;
   position: relative;
   top: -22px;
-}
-
-.precipitation {
-  font-family: "Neucha";
-  font-size: 17px;
-  color: #fff;
 }
 
 .humidity {
@@ -152,5 +148,5 @@ ul {
 
 .link {
   display: block;
-  margin: 10px 100px;
+  margin: -20px 90px;
 }
