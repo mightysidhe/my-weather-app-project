@@ -1,6 +1,19 @@
+ul {
+  list-style-type: none;
+  text-align: left;
+}
+
+.weather-app {
+  max-width: 600px;
+  margin: 10px 10px;
+  padding: 20px;
+  border: 5px solid #84b8d8;
+  border-radius: 1%;
+}
+
 .holder {
-  margin: 80px 10px 40px 75px;
-  width: 400px;
+  margin: 20px 10px 20px 75px;
+  width: 300px;
   border: 3px solid #84b8d8;
   border-radius: 50px;
   text-align: center;
@@ -13,21 +26,16 @@
   color: #fff;
   background: #84b8d8;
   border: 2px solid #84b8d8;
-  border-radius: 30px;
+  border-radius: 10px;
   padding: 3px 10px;
 }
 
-.card-1 {
-  border: 5px solid #84b8d8;
-  border-radius: 1%;
-  margin: 30px 100px;
-}
-
 .card-2 {
+  max-width: 600px;
   border: 5px solid #84b8d8;
-  border-radius: 100px;
+  border-radius: 50px;
   background: #84b8d8;
-  margin: 20px 60px;
+  margin: 10px 60px;
   padding: 0px;
 }
 
@@ -49,75 +57,47 @@
   font-family: "Neucha";
   font-size: 25px;
   color: #fff;
-  position: relative;
-  top: 0px;
-  left: 100px;
 }
 
 .time {
   font-family: "Neucha";
   font-size: 25px;
   color: #fff;
-  position: relative;
-  top: -38px;
-  left: 225px;
 }
 
 .sky {
   font-family: "Neucha";
   font-size: 25px;
   color: #fff;
-  position: relative;
-  top: -77px;
-  left: 325px;
+}
+
+.cloud {
+  color: #fff;
+  font-size: 40px;
 }
 
 .temperature {
   font-family: "Neucha";
   font-size: 40px;
   color: #fff;
-  position: relative;
-  top: -100px;
-  left: 80px;
-}
-
-.cloud {
-  color: #fff;
-  position: relative;
-  left: 200px;
-  top: -40px;
-  font-size: 80px;
 }
 
 .precipitation {
   font-family: "Neucha";
   font-size: 17px;
   color: #fff;
-  position: relative;
-  top: -175px;
-  left: 350px;
 }
 
 .humidity {
   font-family: "Neucha";
   font-size: 17px;
   color: #fff;
-  position: relative;
-  top: -175px;
-  left: 350px;
 }
 
 .wind {
   font-family: "Neucha";
   font-size: 17px;
   color: #fff;
-  position: relative;
-  top: -175px;
-  left: 350px;
-}
-
-.row {
-  padding: 50px 50px;
 }
 
 .col {

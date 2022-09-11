@@ -26,68 +26,102 @@
   </head>
 
   <body>
-    <div class="card-1" style="width: 40rem">
-      <form id="search-form">
-        <input
-          type="text"
-          class="holder"
-          id="city-input"
-          placeholder="City name"
-          autocomplete="off"
-          autofocus="on"
-        />
-        <input type="submit" class="search-button" value="Search" />
-      </form>
-      <div class="card-2" style="height: 20rem">
-        <div class="city">Kyiv</div>
-        <hr class="solid" />
-        <div class="day">Sunday</div>
-        <div class="time">12:00</div>
-        <div class="sky">Cloudy</div>
-        <i class="fa-solid fa-cloud cloud"></i>
-        <div class="temperature">24°C</div>
+    <div class="container">
+      <div class="weather-app">
+        <form id="search-form">
+          <input
+            type="text"
+            class="holder"
+            id="city-input"
+            placeholder="City name"
+            autocomplete="off"
+            autofocus="on"
+          />
+          <input type="submit" class="search-button" value="Search" />
+        </form>
 
-        <div class="precipitation">Precipitation: 47%</div>
-        <div class="humidity">Humidity: 23%</div>
-        <div class="wind">Wind: 29km/h</div>
-      </div>
+        <div class="container">
+          <div class="card-2">
+            <div class="city">Kyiv</div>
+            <hr class="solid" />
 
-      <div class="container">
-        <div class="row">
-          <div class="col">
-            <div class="weekday">MON</div>
-            <i class="fa-solid fa-cloud cloud-1"></i>
-            <div class="temp">27°</div>
+            <div class="container">
+              <div class="row align-items-center">
+                <div class="col">
+                  <div class="day">Sunday</div>
+                </div>
+                <div class="col">
+                  <div class="time">12:00</div>
+                </div>
+                <div class="col">
+                  <div class="sky">Cloudy</div>
+                </div>
+              </div>
+            </div>
+            <br / >
+            <div class="container">
+              <div class="row align-items-end">
+                <div class="col">
+                  <i class="fa-solid fa-cloud cloud"></i>
+                  <div class="temperature">24°C</div>
+                </div>
+                <div class="col">
+                  <ul>
+                    <li>
+                      <div class="precipitation">Precipitation: 47%</div>
+                    </li>
+                    <li>
+                      <div class="humidity">Humidity: 23%</div>
+                    </li>
+                    <li>
+                      <div class="wind">Wind: 29km/h</div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="col">
-            <div class="weekday">TUE</div>
-            <i class="fa-solid fa-cloud-rain cloud-rain"></i>
-            <div class="temp">26°</div>
-          </div>
-          <div class="col">
-            <div class="weekday">WED</div>
-            <i class="fa-solid fa-sun sun"></i>
-            <div class="temp">31°</div>
-          </div>
-          <div class="col">
-            <div class="weekday">THU</div>
-            <i class="fa-solid fa-sun sun"></i>
-            <div class="temp">31°</div>
-          </div>
-          <div class="col">
-            <div class="weekday">FRI</div>
-            <i class="fa-solid fa-cloud cloud-1"></i>
-            <div class="temp">28°</div>
+        </div>
+
+        <div class="container">
+          <div class="row">
+            <div class="col">
+              <div class="weekday">MON</div>
+              <i class="fa-solid fa-cloud cloud-1"></i>
+              <div class="temp">27°</div>
+            </div>
+            <div class="col">
+              <div class="weekday">TUE</div>
+              <i class="fa-solid fa-cloud-rain cloud-rain"></i>
+              <div class="temp">26°</div>
+            </div>
+            <div class="col">
+              <div class="weekday">WED</div>
+              <i class="fa-solid fa-sun sun"></i>
+              <div class="temp">31°</div>
+            </div>
+            <div class="col">
+              <div class="weekday">THU</div>
+              <i class="fa-solid fa-sun sun"></i>
+              <div class="temp">31°</div>
+            </div>
+            <div class="col">
+              <div class="weekday">FRI</div>
+              <i class="fa-solid fa-cloud cloud-1"></i>
+              <div class="temp">28°</div>
+            </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="link">
-      <a href="https://github.com/mightysidhe/my-weather-app-project">
-        Open-source code
-      </a>
-      by Anna Kyselova
-    </div>
+    <small>
+      <div class="link">
+        <a href="https://github.com/mightysidhe/my-weather-app-project">
+          Open-source code
+        </a>
+        by Anna Kyselova
+      </div>
+    </small>
     <script src="src/index.js"></script>
   </body>
 </html>
