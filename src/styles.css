@@ -3,6 +3,13 @@ ul {
   text-align: left;
 }
 
+i {
+  color: white;
+  font-size: 40px;
+  margin-right: 10px;
+  line-height: 1;
+}
+
 .weather-app {
   max-width: 600px;
   margin: 20px 10px;
@@ -78,13 +85,6 @@ ul {
   margin-left: 22px;
 }
 
-.weather-temperature .cloud {
-  color: #fff;
-  font-size: 40px;
-  margin-right: 10px;
-  line-height: 1;
-}
-
 .weather-temperature strong {
   font-family: "Neucha";
   font-size: 50px;
@@ -98,6 +98,15 @@ ul {
   color: #fff;
   position: relative;
   top: -22px;
+}
+
+.weather-temperature .active {
+  color: #fff;
+  cursor: default;
+}
+
+.weather-temperature .active:hover {
+  text-decoration: none;
 }
 
 .humidity {

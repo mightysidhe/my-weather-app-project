@@ -63,10 +63,13 @@
               <div class="row align-items-end">
                 <div class="col">
                   <div class="d-flex weather-temperature">
-                    <i class="fa-solid fa-cloud cloud" class="float-felt"></i>
+                    <i class="fa-solid fa-cloud" id="icon"></i>
                     <div class="float-left">
                       <strong id="temperature">24</strong>
-                      <span class="units">°C | <a href="#">°F </a></span>
+                      <span class="units">
+                        <a href="#" id="celsius-link" class="active">°C </a>|
+                        <a href="#" id="fahrenheit-link">°F </a></span
+                      >
                     </div>
                   </div>
                 </div>
