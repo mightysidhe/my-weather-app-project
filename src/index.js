@@ -68,7 +68,7 @@ function showTemperature(response) {
   currentTemperature.innerHTML = `${temperatureRounded}`;
   descriptionElement.innerHTML = response.data.weather[0].description;
   humidityElement.innerHTML = response.data.main.humidity;
-  windElement.innerHTML = response.data.wind.speed;
+  windElement.innerHTML = Math.round(response.data.wind.speed);
 
   iconElement.setAttribute("class", convertWeatherIcons(weatherElement));
 }
