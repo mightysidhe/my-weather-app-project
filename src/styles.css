@@ -155,6 +155,10 @@ i {
   font-size: 20px;
 }
 
+.temp-min {
+  opacity: 0.5;
+}
+
 .link {
   display: block;
   margin: -20px 90px;

@@ -27,6 +27,32 @@ if (minutes < 10) {
 }
 time.innerHTML = `${hours}:${minutes}`;
 
+function showForecast(response) {
+  console.log(response.data.daily);
+  let forecastElement = document.querySelector("#forecast");
+
+  let forecastHTML = `<div class="row">`;
+  let days = ["Thu", "Fri", "Sat"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+
+    <div class="col">
+      <div class="weekday">${day}</div>
+      <i class="fa-solid fa-cloud-rain cloud-rain"></i>
+      <div class="temp">
+        <span class="forecast-temp-max">27°</span>
+        <span class="forecast-temp-min">18°</span>
+      </div>
+    </div>
+
+`;
+  });
+  forecastHTML = forecastHTML + "</div>";
+  forecastElement.innerHTML = forecastHTML;
+}
+
 function convertWeatherIcons(iconCode) {
   if (iconCode === "01d") {
     return "fa-solid fa-sun";
@@ -54,6 +80,13 @@ function convertWeatherIcons(iconCode) {
     return "fa-duotone fa-cloud-fog";
 }
 
+function getForecast(coordinates) {
+  let apiKey = "de2c40e370d58e257faf07ba4ea95840";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+
+  axios.get(apiUrl).then(showForecast);
+}
+
 function showTemperature(response) {
   let temperatureRounded = Math.round(response.data.main.temp);
   let currentTemperature = document.querySelector("#temperature");
@@ -71,20 +104,20 @@ function showTemperature(response) {
   windElement.innerHTML = Math.round(response.data.wind.speed);
 
   iconElement.setAttribute("class", convertWeatherIcons(weatherElement));
+  getForecast(response.data.coord);
 }
 
-function searchCity(event) {
-  event.preventDefault();
-
-  let searchInput = document.querySelector("#city-input");
-  let cityElement = document.querySelector(".city");
-  cityElement.innerHTML = `${searchInput.value}`;
+function search(city) {
   let units = "metric";
   let apiKey = "de2c40e370d58e257faf07ba4ea95840";
-  let apiEndPoint = "https://api.openweathermap.org/data/2.5/weather";
-  let apiUrl = `${apiEndPoint}?q=${searchInput.value}&appid=${apiKey}&units=${units}`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
+  axios.get(apiUrl).then(showTemperature);
+}
 
-  axios.get(`${apiUrl}&appid=${apiKey}&units=metric`).then(showTemperature);
+function handleSubmit(event) {
+  event.preventDefault();
+  let searchInput = document.querySelector("#city-input");
+  search(searchInput.value);
 }
 
 function displayFahrenheitTemperature(event) {
@@ -106,11 +139,13 @@ function displayCelsiusTemperature(event) {
 
 let celsiusTemperature = null;
 
-let search = document.querySelector("#search-form");
-search.addEventListener("submit", searchCity);
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", handleSubmit);
 
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
 
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
+
+search("Kyiv");
