@@ -27,51 +27,58 @@ if (minutes < 10) {
 }
 time.innerHTML = `${hours}:${minutes}`;
 
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wen", "Thu", "Fri", "Sun"];
+
+  return days[day];
+}
+
 function showForecast(response) {
-  console.log(response.data.daily);
+  let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
 
   let forecastHTML = `<div class="row">`;
   let days = ["Thu", "Fri", "Sat", "Sun", "Mon"];
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `
+
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 5) {
+      forecastHTML =
+        forecastHTML +
+        `
 
     <div class="col">
-      <div class="weekday">${day}</div>
-      <i class="fa-solid fa-cloud-rain cloud-rain"></i>
+      <div class="weekday">${formatDay(forecastDay.dt)}</div>
+      <i class="${convertWeatherIcons(forecastDay.weather[0].icon)}"></i>
       <div class="temp">
-        <span class="forecast-temp-max">27°</span>
-        <span class="forecast-temp-min">18°</span>
+        <span class="forecast-temp-max">${Math.round(
+          forecastDay.temp.max
+        )}°</span>
+        <span class="forecast-temp-min">${Math.round(
+          forecastDay.temp.min
+        )}°</span>
       </div>
     </div>
 
 `;
+    }
   });
-  forecastHTML = forecastHTML + "</div>";
+  forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
 }
 
 function convertWeatherIcons(iconCode) {
-  if (iconCode === "01d") {
+  if (iconCode === "01d" || iconCode === "01n") {
     return "fa-solid fa-sun";
-  } else if (iconCode === "01n") {
-    return "fa-solid fa-moon";
-  } else if (iconCode === "02d") {
-    return "fa-solid fa-clouds-sun";
-  } else if (iconCode === "02n") {
-    return "fa-solid fa-clouds-moon";
-  } else if (iconCode === "03d" || iconCode === "03n") {
-    return "fa-solid fa-clouds-moon";
+  } else if (iconCode === "02d" || iconCode === "02n") {
+    return "fa-solid fa-cloud-sun";
   } else if (iconCode === "04d" || iconCode === "04n") {
     return "fa-solid fa-cloud";
   } else if (iconCode === "09d" || iconCode === "09n") {
     return "fa-solid fa-cloud-showers-heavy";
-  } else if (iconCode === "10d") {
+  } else if (iconCode === "10d" || iconCode === "10n") {
     return "fa-solid fa-cloud-sun-rain";
-  } else if (iconCode === "10n") {
-    return "fa-solid fa-cloud-moon-rain";
   } else if (iconCode === "11d" || iconCode === "11n") {
     return "fa-solid fa-cloud-bolt";
   } else if (iconCode === "13d" || iconCode === "13n") {
@@ -93,8 +100,7 @@ function showTemperature(response) {
   let descriptionElement = document.querySelector(".sky");
   let humidityElement = document.querySelector(".humidity-percent");
   let windElement = document.querySelector(".wind-speed");
-  let iconElement = document.querySelector("#icon");
-  let weatherElement = response.data.weather[0].icon;
+  let cityElement = document.querySelector(".city");
 
   celsiusTemperature = response.data.main.temp;
 
@@ -102,8 +108,12 @@ function showTemperature(response) {
   descriptionElement.innerHTML = response.data.weather[0].description;
   humidityElement.innerHTML = response.data.main.humidity;
   windElement.innerHTML = Math.round(response.data.wind.speed);
+  cityElement.innerHTML = response.data.name;
 
+  let iconElement = document.querySelector("#icon");
+  let weatherElement = response.data.weather[0].icon;
   iconElement.setAttribute("class", convertWeatherIcons(weatherElement));
+
   getForecast(response.data.coord);
 }
 
@@ -116,36 +126,11 @@ function search(city) {
 
 function handleSubmit(event) {
   event.preventDefault();
-  let searchInput = document.querySelector("#city-input");
-  search(searchInput.value);
+  let searchInput = document.querySelector("#city-input").value;
+  search(searchInput);
 }
-
-function displayFahrenheitTemperature(event) {
-  event.preventDefault();
-  celsiusLink.classList.remove("active");
-  fahrenheitLink.classList.add("active");
-  let temperatureElement = document.querySelector("#temperature");
-  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
-  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
-}
-
-function displayCelsiusTemperature(event) {
-  event.preventDefault();
-  celsiusLink.classList.add("active");
-  fahrenheitLink.classList.remove("active");
-  let temperatureElement = document.querySelector("#temperature");
-  temperatureElement.innerHTML = Math.round(celsiusTemperature);
-}
-
-let celsiusTemperature = null;
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
-
-let fahrenheitLink = document.querySelector("#fahrenheit-link");
-fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
-
-let celsiusLink = document.querySelector("#celsius-link");
-celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
 search("Kyiv");

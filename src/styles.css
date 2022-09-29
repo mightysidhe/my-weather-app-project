@@ -4,44 +4,48 @@ ul {
 }
 
 i {
-  color: white;
+  color: #f6c232;
   font-size: 40px;
   margin-right: 10px;
   line-height: 1;
+  min-width: 10px;
 }
 
 .weather-app {
   max-width: 600px;
   margin: 20px 10px;
   padding: 20px;
-  border: 5px solid #295174;
+  border: 5px solid #1d3652;
   border-radius: 1%;
+  background-color: #1d3652;
+  color: #5bd7dd;
 }
 
 .holder {
   margin: 10px 10px 20px 80px;
   width: 300px;
-  border: 3px solid #295174;
+  border: 3px solid #224e73;
   border-radius: 50px;
   text-align: center;
   padding: 3px 10px;
+  background-color: #c4dcdf;
 }
 
 .search-button {
   font-family: "Neucha";
   font-size: 20px;
-  color: #fff;
-  background: #295174;
-  border: 2px solid #295174;
+  color: #224e73;
+  background: #f6c232;
+  border: 2px solid #224e73;
   border-radius: 10px;
   padding: 3px 10px;
 }
 
 .card-2 {
   max-width: 600px;
-  border: 5px solid #295174;
+  border: 5px solid #224e73;
   border-radius: 50px;
-  background: #295174;
+  background: #c4dcdf;
   margin: 10px 60px 20px;
   padding: 0px;
 }
@@ -49,14 +53,14 @@ i {
 .city {
   font-family: "Neucha";
   font-size: 40px;
-  color: #fff;
+  color: #32548b;
   text-align: center;
   margin: 20px 1px 1px;
   text-transform: capitalize;
 }
 
 .solid {
-  color: #fff;
+  color: #224e73;
   position: relative;
   top: -10px;
 }
@@ -64,19 +68,19 @@ i {
 .day {
   font-family: "Neucha";
   font-size: 25px;
-  color: #fff;
+  color: #32548b;
 }
 
 .time {
   font-family: "Neucha";
   font-size: 25px;
-  color: #fff;
+  color: #32548b;
 }
 
 .sky {
   font-family: "Neucha";
   font-size: 25px;
-  color: #fff;
+  color: #32548b;
   text-transform: capitalize;
 }
 
@@ -88,20 +92,20 @@ i {
 .weather-temperature strong {
   font-family: "Neucha";
   font-size: 50px;
-  color: #fff;
+  color: #32548b;
   line-height: 1;
 }
 
 .weather-temperature .units {
   font-family: "Neucha";
-  font-size: 15px;
-  color: #fff;
+  font-size: 20px;
+  color: #32548b;
   position: relative;
   top: -22px;
 }
 
 .weather-temperature .active {
-  color: #fff;
+  color: #32548b;
   cursor: default;
 }
 
@@ -112,13 +116,13 @@ i {
 .humidity {
   font-family: "Neucha";
   font-size: 17px;
-  color: #fff;
+  color: #32548b;
 }
 
 .wind {
   font-family: "Neucha";
   font-size: 17px;
-  color: #fff;
+  color: #32548b;
 }
 
 .col {
@@ -129,24 +133,6 @@ i {
   font-family: "Neucha";
   margin: 10px 10px;
   font-size: 20px;
-}
-
-.cloud-rain {
-  font-size: 40px;
-  margin: 10px 10px;
-  color: #4380b0;
-}
-
-.cloud-1 {
-  font-size: 40px;
-  margin: 10px 10px;
-  color: #29455b;
-}
-
-.sun {
-  font-size: 40px;
-  margin: 10px 10px;
-  color: #f7e261;
 }
 
 .temp {
@@ -160,6 +146,9 @@ i {
 }
 
 .link {
-  display: block;
   margin: -20px 90px;
+}
+
+.forecast-temp-min {
+  opacity: 0.5;
 }
